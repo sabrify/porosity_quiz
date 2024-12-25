@@ -1,0 +1,100 @@
+.main_section{
+    margin-top: 10%;
+    text-align: center;
+    font-size: 34px;
+}
+.group_two{
+    font-size: 32px;
+}
+input#name {
+    margin: 20px 0 ;
+    height: 53px;
+    font-size: 16px;
+    text-align: center;
+}
+.arrows{
+    text-align: center;
+    display: inline-block;
+}
+button{
+    background-color: #000000;
+    border: 1px solid #000000;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    letter-spacing: normal;
+    text-align: center;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin: 0;
+    line-height: 1.2;
+    padding: 16px 24px;
+    min-height: 53px;
+    font-size: 15px;
+}
+button.disabled, .submit.disabled{
+    cursor: default;
+    opacity: .3;
+}
+.option:hover{
+    cursor: pointer;
+    background-color: #ea6cb0;
+    border: solid 1px #ea6cb0;
+    box-shadow: 0px 0px 0px 0px #ffffff inset, 0px 0px 0px 0px #ffffff;
+    color: #ffffff;
+
+}
+.option.selected{
+    cursor: pointer;
+    background-color: #ea6cb0;
+    border: solid 1px #ea6cb0;
+    box-shadow: 0px 0px 0px 0px #ffffff inset, 0px 0px 0px 0px #ffffff;
+    color: #ffffff;
+}
+ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;   
+    flex-wrap: nowrap; 
+}
+li{
+    border: #000000 1px solid;
+    padding: 10px;
+
+}
+.image-options{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    overflow-x: auto;
+    font-size: 16px !important;
+    line-height: 19px !important;
+    font-weight: bold !important;
+    font-family: inherit !important;
+    padding: 0 0 16px 0 !important;
+    border-radius: 4px !important;
+    overflow: visible !important;
+    -webkit-transition: border-color .2s ease !important;
+    transition: border-color .2s ease !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    color: #000000 !important;
+    list-style: none !important;
+    text-align: center !important;
+    grid-column: span 2 !important;
+    background-color: #ffffff;
+    position: relative !important;
+}
+.option{
+
+    background-color: rgba(0, 0, 0, 0);
+    border: solid 1px #000000;
+    box-shadow: 0px 0px 0px 0px #000000 inset, 0px 0px 0px 0px #000000;
+    border-radius: 4px;
+}

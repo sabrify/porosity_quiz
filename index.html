@@ -1,0 +1,122 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Porosity Hair Quiz</title>
+</head>
+<body>
+    <main>
+        <div class="topbar">
+            <button type="button" id="navLeft">Previous</button>
+        </div>
+        <div class="main_section">
+            <form id="myForm" method="post">
+                <!-- Section 1: Welcome -->
+                <section class="group_one" id="one">
+                    <h1>Currl Quiz</h1>
+                    <h2>Hey Currl, Thanks For Stopping By!</h2>
+                    <h2>Click the button below to get started:</h2>
+                </section>
+                
+                <!-- Section 2: Name Input -->
+                <section class="group_two" id="two">
+                    <div class="form-control">
+                        <div>What's Your First Name?</div>
+                        
+                        <input class="fname" type="text" name="name" required oninput="checkNameInput()" id="name" placeholder="Name">
+                    </div>
+                </section>
+                
+                <!-- Section 3: Water Absorption -->
+                <section class="group_three" id="three">
+                    <div class="form-control">
+                        <label for="watter_absorption">When you spray water on your hair, how long does it take to absorb?</label>
+                        <ul>
+                            <li class="option" data-value="quickly">Absorbs quickly</li>
+                            <li class="option" data-value="moderately">Absorbs moderately</li>
+                            <li class="option" data-value="slowly">Sits on the surface</li>
+                        </ul>
+                        <input type="hidden" name="watter_absorption" id="watter_absorption">
+                    </div>
+                </section>
+                
+                <!-- Section 4: Drying Time -->
+                <section class="group_four" id="four">
+                    <div class="form-control">
+                        <label for="drying_time">How long does it take your hair to air-dry after washing?</label>
+                        <ul>
+                            <li class="option" data-value="quickly">Dries quickly</li>
+                            <li class="option" data-value="normally">Dries normally</li>
+                            <li class="option" data-value="slowly">Takes a long time</li>
+                        </ul>
+                        <input type="hidden" name="drying_time" id="drying_time">
+                    </div>
+                </section>
+                
+                <!-- Section 5: Hair Texture After Wetting -->
+                <section class="group_five" id="five">
+                    <div class="form-control">
+                        <label for="hair_texture">How does your hair feel after washing?</label>
+                        <ul>
+                            <li class="option" data-value="soft">Soft and hydrated</li>
+                            <li class="option" data-value="rough">Brittle or rough</li>
+                            <li class="option" data-value="slick">Slimy or overly slick</li>
+                        </ul>
+                        <input type="hidden" name="hair_texture" id="hair_texture">
+                    </div>
+                </section>
+                
+                <!-- Section 6: Product Absorption -->
+                <section class="group_six" id="six">
+                    <div class="form-control">
+                        <label for="product_absorption">Does your hair absorb oils and creams easily?</label>
+                        <ul>
+                            <li class="option" data-value="easily">Yes, absorbs quickly</li>
+                            <li class="option" data-value="sometimes">Sometimes</li>
+                            <li class="option" data-value="not-easily">No, sits on the surface</li>
+                        </ul>
+                        <input type="hidden" name="product_absorption" id="product_absorption">
+                    </div>
+                </section>
+                
+                <!-- Section 7: Elasticity Test -->
+                <section class="group_seven" id="seven">
+                    <div class="form-control">
+                        <label for="elasticity">When you stretch a wet strand of hair, how does it react?</label>
+                        <ul>
+                            <li class="option" data-value="breaks">Breaks easily</li>
+                            <li class="option" data-value="stretches-slightly">Stretches slightly and returns</li>
+                            <li class="option" data-value="over-stretches">Stretches too much and doesn’t return</li>
+                        </ul>
+                        <input type="hidden" name="elasticity" id="elasticity">
+                    </div>
+                </section>
+                
+                <!-- Section 8: Shine and Appearance -->
+                <section class="group_eight" id="eight">
+                    <div class="form-control">
+                        <label for="shine">How does your hair look under natural light?</label>
+                        <ul>
+                            <li class="option" data-value="very-shiny" onclick="selectOption(this)">Very shiny</li>
+                            <li class="option" data-value="balanced" onclick="selectOption(this)">Balanced shine</li>
+                            <li class="option" data-value="dull" onclick="selectOption(this)">Dull or frizzy</li>
+                        </ul>
+                        <input type="hidden" name="shine" id="shine">
+                    </div>
+                </section>
+                
+                <!-- Navigation -->
+                <div class="arrows">
+                    <span id="stepInfo"></span>
+                    <button type="button" disabled class="disabled" id="navRight">Next</button>
+                    <button type="button" id="getStarted">Get Started</button>
+                    <button type="submit" disabled class="disabled" id="submit">Submit</button>
+
+                  </div>
+            </form>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

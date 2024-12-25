@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Results</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <div class="main_section">
+      <h1>Your Quiz Results</h1>
+      <p id="nameResult"></p>
+      <p id="waterAbsorptionResult"></p>
+      <p id="dryingTimeResult"></p>
+      <p id="hairTextureResult"></p>
+      <p id="productAbsorptionResult"></p>
+      <p id="elasticityResult"></p>
+      <p id="shineResult"></p>
+      <p id="porosityResult"></p>
+
+      <button id="retakeQuiz">Retake Quiz</button>
+    </div>
+  </main>
+
+  <script>
+    // Retrieve results from localStorage
+    const results = JSON.parse(localStorage.getItem('quizResults'));
+    if (results) {
+      document.getElementById('nameResult').textContent = `Name: ${results.name}`;
+      document.getElementById('waterAbsorptionResult').textContent = `Water Absorption: ${results.waterAbsorption}`;
+      document.getElementById('dryingTimeResult').textContent = `Drying Time: ${results.dryingTime}`;
+      document.getElementById('hairTextureResult').textContent = `Hair Texture: ${results.hairTexture}`;
+      document.getElementById('productAbsorptionResult').textContent = `Product Absorption: ${results.productAbsorption}`;
+      document.getElementById('elasticityResult').textContent = `Elasticity: ${results.elasticity}`;
+      document.getElementById('shineResult').textContent = `Shine: ${results.shine}`;
+    }
+
+    // Porosity Calculation
+    function calculatePorosity() {
+      const answers = {
+        water_absorption: results.waterAbsorption,
+        drying_time: results.dryingTime,
+        hair_texture: results.hairTexture,
+        product_absorption: results.productAbsorption,
+        elasticity: results.elasticity,
+        shine: results.shine,
+      };
+
+      const scores = {
+        water_absorption: { "quickly": 3, "moderately": 2, "slowly": 1 },
+        drying_time: { "quickly": 3, "normally": 2, "slowly": 1 },
+        hair_texture: { "soft": 2, "rough": 3, "slick": 1 },
+        product_absorption: { "easily": 3, "sometimes": 2, "not-easily": 1 },
+        elasticity: { "breaks": 1, "stretches-slightly": 2, "over-stretches": 3 },
+        shine: { "very-shiny": 1, "balanced": 2, "dull": 3 },
+      };
+
+      const weights = {
+        water_absorption: 3,
+        drying_time: 2,
+        hair_texture: 2,
+        product_absorption: 3,
+        elasticity: 1,
+        shine: 1,
+      };
+
+      let totalScore = 0;
+      for (const [question, answer] of Object.entries(answers)) {
+        const score = scores[question]?.[answer] || 0;
+        totalScore += score * weights[question];
+      }
+
+      const maxScore = Object.keys(weights).reduce(
+        (sum, question) => sum + weights[question] * 3,
+        0
+      );
+      const normalizedScore = (totalScore / maxScore) * 18;
+
+      let porosityResult = "";
+      if (normalizedScore <= 10) {
+        porosityResult = "Low Porosity";
+      } else if (normalizedScore <= 14) {
+        porosityResult = "Medium Porosity";
+      } else {
+        porosityResult = "High Porosity";
+      }
+
+      document.getElementById('porosityResult').textContent = `Porosity Level: ${porosityResult}`;
+    }
+
+    // Calculate porosity on page load
+    if (results) {
+      calculatePorosity();
+    }
+
+    // Retake quiz button logic
+    document.getElementById('retakeQuiz').addEventListener('click', () => {
+      localStorage.removeItem('quizResults'); // Clear previous results
+      window.location.href = "index.html"; // Redirect to the quiz page
+    });
+  </script>
+</body>
+</html>
