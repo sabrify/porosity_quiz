@@ -9,7 +9,7 @@
 <body>
   <main>
     <div class="main_section">
-      <h1>Your Quiz Results</h1>
+      <!-- <h1>Your Quiz Results</h1> -->
       <p id="nameResult"></p>
       <p id="waterAbsorptionResult"></p>
       <p id="dryingTimeResult"></p>
@@ -17,9 +17,9 @@
       <p id="productAbsorptionResult"></p>
       <p id="elasticityResult"></p>
       <p id="shineResult"></p>
-      <p id="porosityResult"></p>
+      <p>Your Hair Porosity Level is <span id="porosityResult"></span></p>
 
-      <button id="retakeQuiz">Retake Quiz</button>
+      <button id="retakeQuiz">Retake the test</button>
     </div>
   </main>
 
@@ -27,13 +27,13 @@
     // Retrieve results from localStorage
     const results = JSON.parse(localStorage.getItem('quizResults'));
     if (results) {
-      document.getElementById('nameResult').textContent = `Name: ${results.name}`;
-      document.getElementById('waterAbsorptionResult').textContent = `Water Absorption: ${results.waterAbsorption}`;
-      document.getElementById('dryingTimeResult').textContent = `Drying Time: ${results.dryingTime}`;
-      document.getElementById('hairTextureResult').textContent = `Hair Texture: ${results.hairTexture}`;
-      document.getElementById('productAbsorptionResult').textContent = `Product Absorption: ${results.productAbsorption}`;
-      document.getElementById('elasticityResult').textContent = `Elasticity: ${results.elasticity}`;
-      document.getElementById('shineResult').textContent = `Shine: ${results.shine}`;
+      document.getElementById('nameResult').textContent = ` ${results.name}`;
+      // document.getElementById('waterAbsorptionResult').textContent = `Water Absorption: ${results.waterAbsorption}`;
+      // document.getElementById('dryingTimeResult').textContent = `Drying Time: ${results.dryingTime}`;
+      // document.getElementById('hairTextureResult').textContent = `Hair Texture: ${results.hairTexture}`;
+      // document.getElementById('productAbsorptionResult').textContent = `Product Absorption: ${results.productAbsorption}`;
+      // document.getElementById('elasticityResult').textContent = `Elasticity: ${results.elasticity}`;
+      // document.getElementById('shineResult').textContent = `Shine: ${results.shine}`;
     }
 
     // Porosity Calculation
@@ -86,7 +86,7 @@
         porosityResult = "High Porosity";
       }
 
-      document.getElementById('porosityResult').textContent = `Porosity Level: ${porosityResult}`;
+      document.getElementById('porosityResult').textContent = ` ${porosityResult}`;
     }
 
     // Calculate porosity on page load

@@ -16,6 +16,15 @@ input#name {
     text-align: center;
     display: inline-block;
 }
+span#porosityResult{
+    border-radius: 4px;
+
+    padding: 10px;
+    background-color: #ea6cb0;
+    border: solid 1px #ea6cb0;
+    box-shadow: 0px 0px 0px 0px #ffffff inset, 0px 0px 0px 0px #ffffff;
+    color: #ffffff;
+}
 button{
     background-color: #000000;
     border: 1px solid #000000;
@@ -34,9 +43,24 @@ button{
     min-height: 53px;
     font-size: 15px;
 }
+button:hover{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+transform: translateY(-2px) 
+;}
 button.disabled, .submit.disabled{
     cursor: default;
     opacity: .3;
+}
+
+.option{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    border: solid 1px #000000;
+    box-shadow: 0px 0px 0px 0px #000000 inset, 0px 0px 0px 0px #000000;
+    border-radius: 4px;
 }
 .option:hover{
     cursor: pointer;
@@ -44,6 +68,7 @@ button.disabled, .submit.disabled{
     border: solid 1px #ea6cb0;
     box-shadow: 0px 0px 0px 0px #ffffff inset, 0px 0px 0px 0px #ffffff;
     color: #ffffff;
+    transform: translateY(-10px);
 
 }
 .option.selected{
@@ -63,7 +88,7 @@ ul{
 }
 li{
     border: #000000 1px solid;
-    padding: 10px;
+    padding: 20px;
 
 }
 .image-options{
@@ -91,10 +116,6 @@ li{
     background-color: #ffffff;
     position: relative !important;
 }
-.option{
-
-    background-color: rgba(0, 0, 0, 0);
-    border: solid 1px #000000;
-    box-shadow: 0px 0px 0px 0px #000000 inset, 0px 0px 0px 0px #000000;
-    border-radius: 4px;
+h3{
+    font-family:  'Open Sans', 'Helvetica Neue', sans-serif;
 }
