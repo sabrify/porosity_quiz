@@ -68,7 +68,7 @@ button.disabled, .submit.disabled{
     border: solid 1px #ea6cb0;
     box-shadow: 0px 0px 0px 0px #ffffff inset, 0px 0px 0px 0px #ffffff;
     color: #ffffff;
-    transform: translateY(-10px);
+    transform: translateY(-4px);
 
 }
 .option.selected{
@@ -117,5 +117,6 @@ li{
     position: relative !important;
 }
 h3{
-    font-family:  'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:  'assitant';
+    font-weight: 400;
 }
