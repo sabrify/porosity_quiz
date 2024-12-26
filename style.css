@@ -2,6 +2,14 @@
     margin-top: 10%;
     text-align: center;
     font-size: 34px;
+    font-family: 'ovo';
+}
+.topbar{
+    margin: 10px;
+}
+button, p{
+    font-family: 'ovo';
+
 }
 .group_two{
     font-size: 32px;
@@ -16,9 +24,8 @@ input#name {
     text-align: center;
     display: inline-block;
 }
-span#porosityResult{
+#porosityResult{
     border-radius: 4px;
-
     padding: 10px;
     background-color: #ea6cb0;
     border: solid 1px #ea6cb0;
@@ -26,6 +33,7 @@ span#porosityResult{
     color: #ffffff;
 }
 button{
+    font-family: 'ovo';
     background-color: #000000;
     border: 1px solid #000000;
     color: #ffffff;
@@ -84,7 +92,7 @@ ul{
     flex-direction: row;
     justify-content: center;
     gap: 10px;   
-    flex-wrap: nowrap; 
+    flex-wrap:  wrap; 
 }
 li{
     border: #000000 1px solid;
@@ -116,7 +124,16 @@ li{
     background-color: #ffffff;
     position: relative !important;
 }
-h3{
-    font-family:  'assitant';
+h1,h2,h3{
+    font-family:  'libre baskerville';
     font-weight: 400;
+}
+.results_section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10PX;
+    margin-bottom: 10px;
 }
